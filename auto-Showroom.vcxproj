@@ -149,6 +149,7 @@
     <ClCompile Include="Customer.cpp" />
     <ClCompile Include="Mercedes.cpp" />
     <ClCompile Include="Order.cpp" />
+    <ClCompile Include="View.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audi.h" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Mercedes.h" />
     <ClInclude Include="Order.h" />
+    <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Auto.txt" />

@@ -49,7 +49,7 @@ int ControlOrder::nextId()
 {
 	if (size == 0)
 	{
-		return -1;
+		return 1;
 	}
 	return order[size - 1]->getOrderId() + 1;
 }
@@ -67,16 +67,16 @@ void ControlOrder::updateCustomerName(int orderId, string newCustomerName)
 	}
 }
 
-void ControlOrder::updateAutoId(int orderId, int newAutoId)
+void ControlOrder::updateAutoName(int orderId, string newAutoName)
 {
 	int p = position(orderId);
 	if (p != -1)
 	{
-		order[p]->setAutoId(newAutoId);
+		order[p]->setAutoName(newAutoName);
 	}
 	else
 	{
-		cout << "Wrong Auto Id" << endl;
+		cout << "Wrong Auto Name" << endl;
 	}
 }
 
@@ -106,6 +106,42 @@ void ControlOrder::updatePaymentType(int orderId, string newPaymentType)
 	}
 }
 
+Order** ControlOrder::getOrder(string customerName, int& nr)
+{
+	nr = 0;
+	Order** inchiriere = new Order * [100];
+
+	for (int i = 0; i < size; i++) {
+
+
+		if (order[i]->getCustomerName() == customerName) {
+
+			inchiriere[nr] = order[i];
+
+			nr++;
+		}
+	}
+	return inchiriere;
+}
+
+Order** ControlOrder::getOrder_id(int orderId, int& nr)
+{
+	nr = 0;
+	Order** inchiriere = new Order * [100];
+
+	for (int i = 0; i < size; i++) {
+
+
+		if (order[i]->getOrderId() == orderId) {
+
+			inchiriere[nr] = order[i];
+
+			nr++;
+		}
+	}
+	return inchiriere;
+}
+
 void ControlOrder::load()
 {
 	ifstream read("Order.txt");
@@ -116,16 +152,16 @@ void ControlOrder::load()
 		read >> orderId;
 		string customerName;
 		read >> customerName;
-		int autoId;
-		read >> autoId;
+		string autoName;
+		read >> autoName;
 		int price;
 		read >> price;
 		string paymentType;
 		read >> paymentType;
 
-		if (orderId != 0)
+		if (orderId > 0)
 		{
-			Order* o = new Order(orderId,customerName, autoId, price,paymentType);
+			Order* o = new Order(orderId,customerName, autoName, price,paymentType);
 			this->add(o);
 		}
 	}

@@ -1,9 +1,9 @@
 #include "Order.h"
 
-Order::Order(int orderId,string customerName, int autoId, int price,string paymentType)
+Order::Order(int orderId,string customerName, string autoName, int price,string paymentType)
 {
 	this->orderId = orderId;
-	this->autoId = autoId;
+	this->autoName = autoName;
 	this->customerName = customerName;
 	this->price = price;
 	this->paymentType = paymentType;
@@ -18,13 +18,13 @@ int Order::getOrderId()
 	return this->orderId;
 }
 
-void Order::setAutoId(int autoId)
+void Order::setAutoName(string autoName)
 {
-	this->autoId = autoId;
+	this->autoName = autoName;
 }
-int Order::getAutoId()
+string Order::getAutoName()
 {
-	return this->autoId;
+	return this->autoName;
 }
 
 void Order::setCustomerName(string customerName)
@@ -60,7 +60,7 @@ string Order::description()
 
 	text += "Order Id: " + to_string(this->orderId) + "\n";
 	text += "Customer Name: " + this->customerName + "\n";
-	text += "Auto Id: " + to_string(this->autoId) + "\n";
+	text += "Auto Name: " + this->autoName + "\n";
 	text += "Pret: " + to_string(this->price) + "\n";
 	text += "Payment type: " + this->paymentType + "\n";
 	
@@ -73,7 +73,7 @@ string Order::toSave()
 
 	text += to_string(this->orderId) + " ";
 	text += this->customerName + " ";
-	text += to_string(this->autoId) + " ";
+	text += this->autoName + " ";
 	text += to_string(this->price) + " ";
 	text += this->paymentType;
 

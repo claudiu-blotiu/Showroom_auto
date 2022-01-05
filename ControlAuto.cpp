@@ -91,6 +91,56 @@ void ControlAuto::updateAnFabr(int id, string newAnFabr)
 	}
 }
 
+void ControlAuto::showAudi()
+{
+	for (int i = 0; i < size; i++)
+	{
+		Audi* a = dynamic_cast<Audi*>(masina[i]);
+
+		if (a != NULL)
+		{
+			cout << a->description() << endl;
+		}
+	}
+}
+
+void ControlAuto::showBmw()
+{
+	for (int i = 0; i < size; i++)
+	{
+		BMW* b = dynamic_cast<BMW*>(masina[i]);
+
+		if (b != NULL)
+		{
+			cout << b->description() << endl;
+		}
+	}
+}
+
+void ControlAuto::showMercedes()
+{
+	for (int i = 0; i < size; i++)
+	{
+		Mercedes* m = dynamic_cast<Mercedes*>(masina[i]);
+
+		if (m != NULL)
+		{
+			cout << m->description() << endl;
+		}
+	}
+}
+
+void ControlAuto::afisareAuto(string marca)
+{
+	for (int i = 0; i < size; i++)
+	{
+		if (masina[i]->getMarca() == marca)
+		{
+			cout << masina[i]->description() << endl;
+		}
+	}
+}
+
 /*Auto* ControlAuto::getUser(string, string);*/
 
 void ControlAuto::load()

@@ -18,12 +18,8 @@ string BMW::descritpion()
 {
 	string text = Auto::description();
 
-	text += "Id: " + to_string(this->getId()) + "\n";
-	text += "Marca: " + this->getMarca() + "\n";
 	text += "Putere:" +to_string(this->putere) + "\n";
-	text += "Pret: " + to_string(this->getPret()) + "\n";
-	text += "An Fabricatie: " + this->getAnFabr() + "\n";
-
+	
 	return text;
 }
 

@@ -1,7 +1,11 @@
-#include"ControlCustomer.h"
+#include"View.h"
 
 int main()
 {
-    ControlCustomer* c = new ControlCustomer();
+    Customer* c = new Customer(3, "Claudiu", "transfer");
+
+    View* v = new View(c);
+
+    v->play();
 
 }

@@ -27,6 +27,14 @@ public:
 
 	void updateAnFabr(int id, string newAnFabr);
 
+	void showAudi();
+
+	void showBmw();
+
+	void showMercedes();
+
+	void afisareAuto(string marca);
+
 	/*Auto* getUser(string, string);*/
 
 	void load();

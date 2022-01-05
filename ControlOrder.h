@@ -23,11 +23,15 @@ public:
 
 	void updateCustomerName(int orderId, string newCustomerName);
 
-	void updateAutoId(int orderId, int newAutoId);
+	void updateAutoName(int orderId, string newAutoName);
 
 	void updatePrice(int orderId, int newPrice);
 
 	void updatePaymentType(int orderId, string newPaymentType);
+
+	Order** getOrder(string customerName, int& nr);
+
+	Order** getOrder_id(int orderId, int& nr);
 
 	void load();
 

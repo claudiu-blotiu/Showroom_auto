@@ -7,7 +7,7 @@ private:
 
 	int orderId = 1;
 	string customerName = "";
-	int autoId = 1;
+	string autoName = "";
 	int price = 1;
 	string paymentType = "";
 
@@ -17,13 +17,13 @@ public:
 	{
 
 	}
-	Order(int, string,int, int,string);
+	Order(int, string,string, int,string);
 
 	void setOrderId(int);
 	int getOrderId();
 
-	void setAutoId(int);
-	int getAutoId();
+	void setAutoName(string);
+	string getAutoName();
 
 	void setCustomerName(string);
 	string getCustomerName();
